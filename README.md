@@ -32,14 +32,14 @@ This Angular application provides a clean, responsive UI for managing patients, 
 
 ## PROJECT STRUCTURE
 
-src/
-  app/
-    core/
-    shared/
-    modules/
-    features/
-    app.component.ts
-  assets/
-  environments/
+- src/
+  - app/
+    - core/
+    - shared/
+    - modules/
+    - features/
+    - app.component.ts
+  - assets/
+  - environments/
 
 ---
