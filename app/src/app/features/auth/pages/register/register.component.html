@@ -1,0 +1,29 @@
+<!doctype html>
+<h2>Create User</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Role</mat-label>
+    <mat-select formControlName="role">
+      <mat-option value="ADMIN">Admin</mat-option>
+      <mat-option value="DOCTOR">Doctor</mat-option>
+      <mat-option value="RECEPTIONIST">Receptionist</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Create User</button>
+
+  @if (message) {
+    <p>{{ message }}</p>
+  }
+</form>

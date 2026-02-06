@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<div class="auth-container">
+  <h2>Login</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password">
+    </mat-form-field>    
+
+    <button mat-raised-button color="primary" type="submit">
+      Login
+    </button>
+  </form>
+
+  @if (error){
+    <div>{{ error }}</div>
+  }
+</div>
