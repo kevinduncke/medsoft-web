@@ -1,29 +1,43 @@
 <!doctype html>
-<h2>Create User</h2>
+<h2 class="title">Create User</h2>
 
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <mat-form-field appearance="outline">
+<form [formGroup]="form" (ngSubmit)="submit()" class="form-container">
+  <!-- EMAIL -->
+  <mat-form-field appearance="outline" class="full-width">
     <mat-label>Email</mat-label>
     <input matInput formControlName="email" />
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <!-- PASSWORD -->
+  <mat-form-field appearance="outline" class="full-width">
     <mat-label>Password</mat-label>
     <input matInput type="password" formControlName="password" />
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <!-- ROLE -->
+  <mat-form-field appearance="outline" class="full-width">
     <mat-label>Role</mat-label>
-    <mat-select formControlName="role">
+    <mat-select formControlName="role" (selectionChange)="onRoleChange($event.value)">
       <mat-option value="ADMIN">Admin</mat-option>
       <mat-option value="DOCTOR">Doctor</mat-option>
       <mat-option value="RECEPTIONIST">Receptionist</mat-option>
     </mat-select>
   </mat-form-field>
 
-  <button mat-raised-button color="primary" type="submit">Create User</button>
+  <!-- PERMISSIONS -->
+  <div class="permissions-container">
+    <h3>Permissions</h3>
+    <mat-selection-list formControlName="permissions" class="permissions-list">      
+      @for (p of permissions; track p) {
+        <mat-list-option [value]="p"> {{ p }} </mat-list-option>
+      }      
+    </mat-selection-list>
+  </div>
+
+  <!-- SUBMIT -->
+  <button mat-raised-button color="primary" type="submit" class="submit-btn">Create User</button>
 
   @if (message) {
-    <p>{{ message }}</p>
+    <p class="message">{{ message }}</p>
   }
 </form>
