@@ -5,57 +5,6 @@
   font-family: 'Inter', sans-serif;
 }
 
-.navleft {
-  background: #ffffff;
-  height: 100vh;
-  width: 250px;
-  margin: 0 4rem 0 0;
-  display: flex;
-  flex-direction: column;
-  padding: 3rem 2rem;
-  box-shadow: 0 8px 25px rgba(230, 230, 230, 0.8);
-}
-.logo {
-  margin-bottom: 3.5rem;
-  text-align: center;
-}
-.links p {
-  text-transform: uppercase;
-  font-size: 0.7rem;
-}
-.navlinks ul {
-  padding: 0;
-}
-.navlinks li {
-  list-style: none;
-  background: #ffffff;
-  margin: 0.6rem 0;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(172, 172, 172, 0.5);
-  padding: 0.7rem 1rem;
-  border: 1px solid white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: normal;
-}
-.navlinks ul a {
-  text-decoration: none;
-  color: #000000;
-}
-.nav-active {
-  background-color: #00aa7c!important;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  color: #ffffff!important;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  border: 1px solid #00aa7c!important;
-}
-.nav-li:hover {
-  border: 1px solid #00aa7c!important;
-}
-
 .dashboard {
   padding: 3rem 0;
 }

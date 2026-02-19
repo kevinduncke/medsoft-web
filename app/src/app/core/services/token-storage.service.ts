@@ -12,6 +12,11 @@ export class TokenStorageService {
     return localStorage.getItem('token');
   }
 
+  signout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+  }
+
   isLoggedIn(){
     return !!this.getToken();
   }

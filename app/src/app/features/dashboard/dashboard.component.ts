@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { TokenStorageService } from 'app/core/services/token-storage.service';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+
+import { Sidebar } from 'app/shared/components/sidebar.component';
 
 export interface SystemActivity {
   date: string;
@@ -55,7 +58,7 @@ const QUICK_INFO: QuickInformation[] = [
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MatIconModule, MatTableModule],
+  imports: [MatIconModule, MatTableModule, RouterLink, Sidebar],
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
