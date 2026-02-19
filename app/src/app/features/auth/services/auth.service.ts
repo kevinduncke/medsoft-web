@@ -4,9 +4,7 @@ import { tap } from 'rxjs';
 import { TokenStorageService } from '../../../core/services/token-storage.service';
 import { environment } from 'environments/environment';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class AuthService {
   private api = environment.apiUrl + '/auth';
 

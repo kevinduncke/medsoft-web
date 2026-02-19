@@ -1,0 +1,109 @@
+@use '@angular/material' as mat;
+
+// Email field styling
+.email-field {
+  @include mat.form-field-overrides(
+    (
+      outlined-outline-color: #b4dad1,
+      outlined-hover-outline-color: #00926b,
+      outlined-focus-outline-color: #00aa7c,
+    )
+  );
+}
+
+// Password field styling
+.password-field {
+  @include mat.form-field-overrides(
+    (
+      outlined-outline-color: #b4dad1,
+      outlined-hover-outline-color: #00926b,
+      outlined-focus-outline-color: #00aa7c,
+    )
+  );
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f9fb url('../../../../assets/medsoft-bg.svg') repeat;
+  background-size: 950px;
+  font-family: 'Inter', sans-serif;
+}
+
+.login-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 5rem 2.5rem 0 2.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 25px rgba(230, 230, 230, 0.8);
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.logo {
+  margin-bottom: 3.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  input {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #f8f8f8;
+    background: #fdfdfd;
+    font-size: 0.95rem;
+    padding: 0 0.65rem;
+    transition: border-color 0.2s ease;
+  }
+}
+
+.pass-mat-icon {
+  position: relative;
+  right: 5px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: #00aa7c !important;
+  color: #ffffff !important;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition:
+    background 0.8s ease,
+    color 0.8s ease;
+  border: 2px solid #00aa7c;
+  letter-spacing: 1px;
+
+  &:hover {
+    background: #ffffff !important;
+    color: #00aa7c !important;
+    border: 2px solid #00aa7c;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 0.4;
+    transform: translateX(0);
+  }
+}
+
+.version-info {
+  margin: 2.5rem 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}

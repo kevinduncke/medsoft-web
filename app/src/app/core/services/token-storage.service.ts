@@ -12,6 +12,10 @@ export class TokenStorageService {
     return localStorage.getItem('token');
   }
 
+  isLoggedIn(){
+    return !!this.getToken();
+  }
+
   setUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
   }

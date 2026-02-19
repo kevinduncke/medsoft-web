@@ -12,10 +12,7 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    console.log('TOKEN: ', token);
   }
-
-  console.log('INTERCEPTOR RUNNING');
 
   return next(req);
 };

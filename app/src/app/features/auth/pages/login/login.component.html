@@ -1,24 +1,57 @@
-<!DOCTYPE html>
-<div class="auth-container">
-  <h2>Login</h2>
+<!doctype html>
+
+<div class="login-wrapper">
+  <div class="logo">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      id="Layer_1"
+      data-name="Layer 1"
+      viewBox="0 0 1075.59 1008.96"
+      width="75px"
+      height="75px"
+    >
+      <path
+        d="M992.86,551.46c-30.62,0-57,17.58-71.3,38.14h-169.55l-83.5-181.74-121.21,295.82L436.22,0l-178.41,589.6H0v69.05h321.35s95.46-355.54,95.46-355.54l97.46,705.85,158.98-426.63,45.73,76.32h202.59c14.34,20.5,40.68,39.97,71.3,39.97,45.65,0,82.73-36.43,82.73-74.49s-37.08-72.67-82.73-72.67Z"
+        style="fill: #00aa7c"
+      />
+    </svg>
+  </div>
 
   <form [formGroup]="form" (ngSubmit)="submit()">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="email-field">
       <mat-label>Email</mat-label>
-      <input matInput formControlName="email" type="email">
+      <input matInput formControlName="email" type="email" placeholder="user@medsoft.com" />
+      <mat-icon matSuffix>alternate_email</mat-icon>
     </mat-form-field>
 
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="password-field">
       <mat-label>Password</mat-label>
-      <input matInput formControlName="password" type="password">
-    </mat-form-field>    
+      <input
+        matInput
+        formControlName="password"
+        type="password"
+        [type]="hide() ? 'password' : 'text'"
+      />
+      <button
+        type="button"
+        matIconButton
+        matSuffix
+        (click)="showPass($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+      >
+        <mat-icon class="pass-mat-icon">{{ hide() ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
 
-    <button mat-raised-button color="primary" type="submit">
-      Login
-    </button>
+    <button mat-raised-button class="btn-submit" type="submit">Sign In</button>
   </form>
 
-  @if (error){
+  <div class="version-info">
+    <p>Medsoft v1.0</p>
+  </div>
+
+  @if (error) {
     <div>{{ error }}</div>
   }
 </div>
