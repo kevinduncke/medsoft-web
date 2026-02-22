@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { TokenStorageService } from 'app/core/services/token-storage.service';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 
 import { Sidebar } from 'app/shared/components/sidebar.component';
+
+export interface LoggedUser {
+  email: string;
+  role: string;
+  permissions: string[];
+}
 
 export interface SystemActivity {
   date: string;
@@ -58,13 +63,13 @@ const QUICK_INFO: QuickInformation[] = [
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MatIconModule, MatTableModule, RouterLink, Sidebar],
+  imports: [MatIconModule, MatTableModule, Sidebar],
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class Dashboard {
-  user: any;
+  user: LoggedUser | null = null;
 
   constructor(private storage: TokenStorageService) {}
 
@@ -75,5 +80,10 @@ export class Dashboard {
 
   ngOnInit() {
     this.user = this.storage.getUser();
+    console.log('Logged User Permissions: ', this.user?.permissions || []);
+  }
+
+  hasPermission(permission: string): boolean {
+    return this.user?.permissions.includes(permission) || false;
   }
 }

@@ -13,6 +13,7 @@ export class TokenStorageService {
   }
 
   signout() {
+    console.log('Removing user token and user data from localStorage');
     localStorage.removeItem('token');
     localStorage.removeItem('user');
   }

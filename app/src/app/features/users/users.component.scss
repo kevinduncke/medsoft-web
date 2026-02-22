@@ -4,3 +4,27 @@
   background-size: 1450px;
   font-family: 'Inter', sans-serif;
 }
+
+.users {
+  width: 100%;
+  padding: 3rem;
+}
+.users-data {
+  margin-bottom: 2rem;
+}
+.users-data h2 {
+  font-size: 1rem;
+  color: #00aa7c;
+}
+.perm-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0.1rem 2rem;
+}
+table {
+  padding: 1rem;
+}
+th,
+td {
+  padding: 10px 5px;
+}

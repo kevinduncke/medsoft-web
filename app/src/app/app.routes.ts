@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
 
@@ -14,12 +15,14 @@ export const routes: Routes = [
     path: 'dashboard',
     loadComponent: () =>
       import('./features/dashboard/dashboard.component').then((m) => m.Dashboard),
+    canActivate: [AuthGuard],
   },
 
   // USERS
   {
     path: 'users',
     loadComponent: () => import('./features/users/users.component').then((m) => m.Users),
+    canActivate: [AuthGuard],
   },
 
   // Fallback

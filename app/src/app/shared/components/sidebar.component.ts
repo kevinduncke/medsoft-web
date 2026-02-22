@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { TokenStorageService } from 'app/core/services/token-storage.service';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [MatIconModule, RouterLink],
+  imports: [MatIconModule, RouterLink, MatButtonModule, CommonModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
@@ -30,7 +32,8 @@ export class Sidebar {
   }
 
   logout() {
+    console.log('Logging out user');
     this.storage.signout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 }
