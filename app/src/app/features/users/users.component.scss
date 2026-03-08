@@ -27,4 +27,12 @@ table {
 th,
 td {
   padding: 10px 5px;
+  font-size: 0.725rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
 }

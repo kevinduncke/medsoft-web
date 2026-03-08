@@ -11,4 +11,12 @@ export class UsersService {
   getUsers(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  editUser(id: string, data: any){
+    return this.http.put(this.apiUrl + `/${id}`, data);
+  }
+
+  deleteUser(id: string): Observable<void> {
+    return this.http.delete<void>(this.apiUrl + `/${id}`);
+  }
 }

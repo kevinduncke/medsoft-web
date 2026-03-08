@@ -80,7 +80,6 @@ export class Dashboard {
 
   ngOnInit() {
     this.user = this.storage.getUser();
-    console.log('Logged User Permissions: ', this.user?.permissions || []);
   }
 
   hasPermission(permission: string): boolean {

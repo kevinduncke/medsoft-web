@@ -35,16 +35,20 @@
 .login-wrapper {
   width: 100%;
   max-width: 420px;
-  padding: 5rem 2.5rem 0 2.5rem;
+  padding: 2rem 2.5rem 0 2.5rem;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 25px rgba(230, 230, 230, 0.8);
   text-align: center;
   animation: fadeIn 0.6s ease-in-out;
 }
 
+.login-wrapper input {
+  background-color: transparent;
+}
+
 .logo {
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
 }
 
 form {
